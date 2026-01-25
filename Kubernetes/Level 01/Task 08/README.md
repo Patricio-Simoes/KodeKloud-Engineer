@@ -8,7 +8,7 @@ topics:
 ---
 # README
 
-Task number 15 was focused on scheduling Cronjobs.
+Task number 8 was focused on scheduling Cronjobs.
 
 The objective was to **create a cronjob named `datacenter`**.
 
@@ -37,7 +37,7 @@ It is essentially the Kubernetes equivalent of the traditional Unix cron utility
 
 ### 2. Applying the resource limits to the pod & deploying it
 
-To apply the CronJob to the pod, the following YAML specification was created:
+To apply the CronJob to the cluster, the following YAML specification was created:
 
 ```yaml
 apiVersion: batch/v1
@@ -60,10 +60,10 @@ spec:
           restartPolicy: OnFailure
 ```
 
-Then, deploying this pod was done using:
+Then, deploying this CronJob was done using:
 
 ```bash
-kubectl apply -f ./pod.yaml
+kubectl apply -f ./cron.yaml
 ```
 
 ### 3. Verifying that it was deployed as expected
@@ -71,10 +71,10 @@ kubectl apply -f ./pod.yaml
 After deploying the CronJob, i ran the following command to check it's status and ensure that as expected:
 
 ```bash
-k get cronjobs
+kubectl get cronjobs
 ```
 
-Which printed a successfull result:
+Which printed a successful result:
 
 ```bash
 NAME         SCHEDULE       SUSPEND   ACTIVE   LAST SCHEDULE   AGE
@@ -84,20 +84,20 @@ datacenter   */12 * * * *   False     0        <none>          6s
 The CronJob deploys a pod for running the job.
 
 ```bash
-kubectl get jobs
+kubectl get pods
 ```
 
 Expected result:
 
 ```bash
-NAME                  COMPLETIONS   DURATION   AGE
-datacenter-29489352   1/1           9s         3m29s
+NAME                        READY   STATUS      RESTARTS   AGE
+datacenter-29489352-mrmw5   0/1     Completed   0          50s
 ```
 
 To verify if the job was successful:
 
 ```bash
-k logs datacenter-29489352-mrmw5
+kubectl logs datacenter-29489352-mrmw5
 ```
 
 Which prints:
