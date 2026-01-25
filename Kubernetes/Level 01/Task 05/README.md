@@ -20,8 +20,8 @@ The objective was to **trigger a rolling update for the existing `nginx-deployme
 
 When approaching this challenge, I broke it down into a sequence of steps:
 
-1. Understand what a rolling update is, what it is for and how it is triggered.
-2. Identify existing image & perform the update
+1. Understand what a rolling update is, what it is for and how it is triggered;
+2. Identify existing image & perform the update;
 3. Verify that it is deployed as expected.
 
 ### 1. Understand what a rolling update is, what it is for and how it is triggered.

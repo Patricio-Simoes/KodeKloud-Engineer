@@ -25,8 +25,8 @@ The objective was to **create a pod named `httpd-pod` and apply resource limits 
 
 When approaching this challenge, I broke it down into a sequence of steps:
 
-1. Understand what a resource limit is and what it is for.
-2. Applying the resource limits to the pod & deploying it.
+1. Understand what a resource limit is and what it is for;
+2. Applying the resource limits to the pod & deploying it;
 3. Verify that it is deployed as expected.
 
 ### 1. What exactly is a resource limit?

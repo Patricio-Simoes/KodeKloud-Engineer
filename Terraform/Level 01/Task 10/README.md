@@ -60,7 +60,7 @@ resource "aws_ebs_snapshot" "xfusion_ss" {
 }
 ```
 
-### 4. Terraform Workflow
+### 3. Terraform Workflow
 
 Once the code is ready, the standard Terraform workflow applies:
 
