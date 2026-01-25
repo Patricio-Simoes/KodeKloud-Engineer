@@ -8,13 +8,13 @@ topics:
 ---
 # README
 
-Task number 14 was focused on creating IAM users on AWS.
+Task number 15 was focused on creating IAM groups on AWS.
 
-The objective was to **create an IAM user named `iamuser_anita` using Terraform**.
+The objective was to **create an IAM group named `iamgroup_anita` using Terraform**.
 
 **Requirements:**
 
-- Create an IAM user named `iamuser_anita`.
+- Create an IAM group named `iamgroup_anita` using terraform.
 
 ## Step-by-Step Solution
 
@@ -40,8 +40,8 @@ Terraform provides the following resources for this task:
 **Complete Configuration:**
 
 ```hcl
-resource "aws_iam_user" "anita" {
-  name = "iamuser_anita"
+resource "aws_iam_group" "anita" {
+  name = "iamgroup_anita"
 }
 ```
 
@@ -84,11 +84,11 @@ Once Terraform finishes applying the configuration, verifying the solution requi
 We can check if the user was created by looking for it's ARN:
 
 ```bash
-terraform state show aws_iam_user.anita | grep "arn"
+terraform state show aws_iam_group.anita | grep "arn"
 ```
 
 Expected output:
 
 ```bash
-arn = "arn:aws:iam::000000000000:user/iamuser_anita"
+arn = "arn:aws:iam::000000000000:group/iamgroup_anita"
 ```
