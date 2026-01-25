@@ -92,3 +92,7 @@ Expected output:
 ```bash
 arn = "arn:aws:iam::000000000000:user/iamuser_anita"
 ```
+
+## Troubleshooting
+
+Surprisingly, no issues occurred during this task!
