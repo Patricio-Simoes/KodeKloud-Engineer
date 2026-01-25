@@ -28,7 +28,7 @@ When approaching this challenge, I broke it down into a sequence of steps:
 
 ### 1. What Exactly is AWS IAM?
 
-**AWS IAM (Identity and Access Management)** is a web service that helps securely control access to AWS resources.
+AWS IAM, (Identity and Access Management), is a web service that helps securely control access to AWS resources.
 
 It allows us to manage users, groups, roles, and their permissions to ensure that only authorized individuals or systems can access specific AWS resources.
 
@@ -104,9 +104,9 @@ terraform apply -auto-approve
 
 Once Terraform finishes applying the configuration, verifying the solution requires: 
 
-### 1. Check if the IAM user was created on AWS
+### 1. Check if the IAM policy was created on AWS
 
-We can check if the user was created by looking for it's ARN:
+We can check if the policy was created by looking for it's ARN:
 
 ```bash
 terraform state show aws_iam_policy.iampolicy_john | grep "arn"

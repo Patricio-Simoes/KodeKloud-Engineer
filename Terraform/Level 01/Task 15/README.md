@@ -79,9 +79,9 @@ terraform apply -auto-approve
 
 Once Terraform finishes applying the configuration, verifying the solution requires: 
 
-### 1. Check if the IAM user was created on AWS
+### 1. Check if the IAM group was created on AWS
 
-We can check if the user was created by looking for it's ARN:
+We can check if the group was created by looking for it's ARN:
 
 ```bash
 terraform state show aws_iam_group.anita | grep "arn"
