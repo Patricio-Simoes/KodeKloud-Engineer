@@ -15,16 +15,16 @@ The objective was to **create a ReplicaSet using `httpd` image.**.
 **Requirements:**
 
 - Create a ReplicaSet using `httpd` image with latest tag and name it `httpd-replicaset`;
-- Apply labels: `app` as `httpd_app`, `type` as `front-end`.
+- Apply labels: `app` as `httpd_app`, `type` as `front-end`;
 - Name the container `httpd-container`. Ensure the replica count is `4`.
 
 ## Step-by-Step Solution
 
 When approaching this challenge, I broke it down into a sequence of steps:
 
-1. Understand what a ReplicaSet is and what it is for.
-2. Understand how ReplicaSet are created.
-3. Deploy the ReplicaSet in the cluster.
+1. Understand what a ReplicaSet is and what it is for;
+2. Understand how ReplicaSet are created;
+3. Deploy the ReplicaSet in the cluster;
 4. Verify that it is deployed as expected.
 
 ### 1. Understand what a ReplicaSet is, what it is for and how it is triggered.

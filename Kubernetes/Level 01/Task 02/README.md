@@ -22,9 +22,9 @@ The objective was to **create a deployment named nginx to deploy the nginx appli
 
 When approaching this challenge, I broke it down into a sequence of steps:
 
-1. Understand what a deployment is and what it is for.
-2. Understand how deployments are created.
-3. Deploy the deployment in the cluster.
+1. Understand what a deployment is and what it is for;
+2. Understand how deployments are created;
+3. Deploy the deployment in the cluster;
 4. Verify that it is deployed as expected.
 
 ### 1. What Exactly is a deployment?

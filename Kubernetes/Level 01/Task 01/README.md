@@ -21,18 +21,18 @@ The objective was to **create a pod named pod-nginx using the nginx image**.
 
 When approaching this challenge, I broke it down into a sequence of steps:
 
-1. Understand what a pod is and what it is for.
-2. Understand how pods are created.
-3. Deploy the pod in the cluster.
+1. Understand what a pod is and what it is for;
+2. Understand how pods are created;
+3. Deploy the pod in the cluster;
 4. Verify that it is deployed as expected.
 
 ### 1. What Exactly is a pod?
 
 A Pod is the smallest deployable unit in Kubernetes. It represents **one or more containers** that:
 
-- Run together on the same node
-- Share the same network namespace (IP address, ports)
-- Can optionally share storage volumes
+- Run together on the same node;
+- Share the same network namespace (IP address, ports);
+- Can optionally share storage volumes.
 
 ### 2. How are pods created?
 

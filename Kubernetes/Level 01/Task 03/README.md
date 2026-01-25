@@ -23,8 +23,8 @@ The objective was to **create a namespace named `dev` and deploy a POD within it
 
 When approaching this challenge, I broke it down into a sequence of steps:
 
-1. Understand what a namespace is and what it is for.
-2. Deploy the pod to the namespace.
+1. Understand what a namespace is and what it is for;
+2. Deploy the pod to the namespace;
 3. Verify that it is deployed as expected.
 
 ### 1. What exactly is a namespace?
