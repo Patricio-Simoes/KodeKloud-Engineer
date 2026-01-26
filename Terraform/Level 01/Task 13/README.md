@@ -21,9 +21,9 @@ The objective was to **create S3 bucket using Terraform**.
 
 When approaching this challenge, I broke it down into a sequence of steps:
 
-1. Look back at Task 12 and understand how to create a private S3;.
-2. Write the Terraform configuration to create the resources.
-3. Initialize and apply the Terraform workflow to create the infrastructure.
+1. Look back at Task 12 and understand how to create a private S3;
+2. Write the Terraform configuration to create the resources;
+3. Initialize and apply the Terraform workflow to create the infrastructure;
 4. Verify that the resources were created successfully on AWS.
 
 ### 1. What needs to change in Task 12?

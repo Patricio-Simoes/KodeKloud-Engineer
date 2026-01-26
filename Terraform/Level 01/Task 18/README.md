@@ -21,8 +21,8 @@ The objective was to **create a kinesis stream using Terraform**.
 When approaching this challenge, I broke it down into a sequence of steps:
 
 1. Understand what Kinesis data streams are and why they are used;
-2. Write the Terraform configuration to create the resources.
-3. Initialize and apply the Terraform workflow to create the infrastructure.
+2. Write the Terraform configuration to create the resources;
+3. Initialize and apply the Terraform workflow to create the infrastructure;
 4. Verify that the resources were created successfully on AWS.
 
 ### 1. What Exactly are Kinesis data streams?

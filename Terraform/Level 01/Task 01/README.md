@@ -22,9 +22,9 @@ The objective was to **create an AWS key pair using Terraform**.
 
 When approaching this challenge, I broke it down into a sequence of steps:
 
-1. Understand what an AWS key pair is and why it is used.
-2. Write the Terraform configuration to generate and register the key pair.
-3. Initialize and apply the Terraform workflow to create the infrastructure.
+1. Understand what an AWS key pair is and why it is used;
+2. Write the Terraform configuration to generate and register the key pair;
+3. Initialize and apply the Terraform workflow to create the infrastructure;
 4. Verify that the key pair was created successfully on AWS.
 
 ### 1. What Exactly is an AWS Key Pair?

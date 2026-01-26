@@ -20,9 +20,9 @@ The objective was to **create an SNS topic using Terraform**.
 
 When approaching this challenge, I broke it down into a sequence of steps:
 
-1. Understand what AWS SNS is and why it is used;;
-2. Write the Terraform configuration to create the resources.
-3. Initialize and apply the Terraform workflow to create the infrastructure.
+1. Understand what AWS SNS is and why it is used;
+2. Write the Terraform configuration to create the resources;
+3. Initialize and apply the Terraform workflow to create the infrastructure;
 4. Verify that the resources were created successfully on AWS.
 
 ### 1. What Exactly are SNS Topics?
@@ -79,9 +79,9 @@ terraform apply -auto-approve
 
 Once Terraform finishes applying the configuration, verifying the solution requires: 
 
-### 1. Check if the stream was created on AWS
+### 1. Check if the topic was created on AWS
 
-We can check if the data stream was created by looking for it's ARN:
+We can check if the SNS topic was created by looking for it's ARN:
 
 ```bash
 terraform state show aws_sns_topic.devops_notifications | grep "arn"

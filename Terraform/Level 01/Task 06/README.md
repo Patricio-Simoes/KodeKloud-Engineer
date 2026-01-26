@@ -20,9 +20,9 @@ The objective was to **create an Elastic IP in AWS using Terraform**.
 
 When approaching this challenge, I broke it down into a sequence of steps:
 
-1. Understand what an AWS Elastic IP is and why it is used.
-2. Write the Terraform configuration to create the Elastic IP.
-3. Initialize and apply the Terraform workflow to create the infrastructure.
+1. Understand what an AWS Elastic IP is and why it is used;
+2. Write the Terraform configuration to create the Elastic IP;
+3. Initialize and apply the Terraform workflow to create the infrastructure;
 4. Verify that the Elastic IP was created successfully on AWS.
 
 ### 1. What Exactly is an AWS Elastic IP?

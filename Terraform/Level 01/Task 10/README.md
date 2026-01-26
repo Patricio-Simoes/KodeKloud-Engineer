@@ -22,9 +22,9 @@ The objective was to **create an a snapshot of an existing volume in AWS using T
 
 When approaching this challenge, I broke it down into a sequence of steps:
 
-1. Understand what an AWS Snapshot is and why it is used.
-2. Write the Terraform configuration to create the resources.
-3. Initialize and apply the Terraform workflow to create the infrastructure.
+1. Understand what an AWS Snapshot is and why it is used;
+2. Write the Terraform configuration to create the resources;
+3. Initialize and apply the Terraform workflow to create the infrastructure;
 4. Verify that the resources were created successfully on AWS.
 
 ### 1. What Exactly is an AWS EBS Snapshot?

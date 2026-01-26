@@ -21,10 +21,10 @@ The objective was to **create a public S3 bucket using Terraform**.
 
 When approaching this challenge, I broke it down into a sequence of steps:
 
-1. Understand what an AWS S3 Bucket is and why it is used.
-2. Understand how an AWS S3 Bucket is set to publicly accessible.
-3. Write the Terraform configuration to create the resources.
-4. Initialize and apply the Terraform workflow to create the infrastructure.
+1. Understand what an AWS S3 Bucket is and why it is used;
+2. Understand how an AWS S3 Bucket is set to publicly accessible;
+3. Write the Terraform configuration to create the resources;
+4. Initialize and apply the Terraform workflow to create the infrastructure;
 5. Verify that the resources were created successfully on AWS.
 
 ### 1. What Exactly is an AWS S3 Bucket?

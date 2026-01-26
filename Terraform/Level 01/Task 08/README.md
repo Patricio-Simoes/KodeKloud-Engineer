@@ -21,10 +21,10 @@ The objective was to **create an AMI from an existing EC2 instance in AWS using 
 
 When approaching this challenge, I broke it down into a sequence of steps:
 
-1. Understand what an AWS AMI is and why it is used.
-2. Recap what an AWS EC2 instance is and why they are used.
-3. Write the Terraform configuration to create the resources.
-4. Initialize and apply the Terraform workflow to create the infrastructure.
+1. Understand what an AWS AMI is and why it is used;
+2. Recap what an AWS EC2 instance is and why they are used;
+3. Write the Terraform configuration to create the resources;
+4. Initialize and apply the Terraform workflow to create the infrastructure;
 5. Verify that the resources were created successfully on AWS.
 
 ### 1. What Exactly is an AWS AMI?
