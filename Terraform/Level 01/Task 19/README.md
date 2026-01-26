@@ -4,48 +4,44 @@ tags:
   - KodeKloud
   - Terraform
 topics:
-  - Kinesis
+  - SNS Topics
 ---
 # README
 
-Task number 18 was focused on Kinesis data streams.
+Task number 19 was focused on AWS SNS Topics.
 
-The objective was to **create a kinesis stream using Terraform**.
+The objective was to **create an SNS topic using Terraform**.
 
 **Requirements:**
 
-- The stream should be named `devops-stream`;
+- The topic name should be `devops-notifications`.
 
 ## Step-by-Step Solution
 
 When approaching this challenge, I broke it down into a sequence of steps:
 
-1. Understand what Kinesis data streams are and why they are used;
+1. Understand what AWS SNS is and why it is used;;
 2. Write the Terraform configuration to create the resources.
 3. Initialize and apply the Terraform workflow to create the infrastructure.
 4. Verify that the resources were created successfully on AWS.
 
-### 1. What Exactly are Kinesis data streams?
+### 1. What Exactly are SNS Topics?
 
-Kinesis Data Streams is a scalable and durable **real-time data streaming service** provided by AWS.
+Amazon Simple Notification Service, (SNS), Topics are a is a fully managed pub/sub, (publish-subscribe), messaging service.
 
-It enables us to **collect, process, and analyze streaming data** from hundreds of thousands of sources, such as application logs, website clickstreams, IoT device telemetry, financial transactions, and social media feeds.
+SNS Topics act as a **communication channel** that allows us to send messages (notifications) to **multiple subscribers** simultaneously.
 
 ### 2. The Terraform Solution
 
 Terraform provides the following resources for this task:
 
-- `aws_kinesis_stream` to create the data stream;
+- `aws_sns_topic` to create the SNS topic;
 
 **Complete Configuration:**
 
 ```hcl
-resource "aws_kinesis_stream" "devops_stream" {
-  name = "devops-stream"
-  
-  stream_mode_details {
-    stream_mode = "ON_DEMAND"
-  }
+resource "aws_sns_topic" "devops_notifications" {
+  name = "devops-notifications"
 }
 ```
 
@@ -88,14 +84,14 @@ Once Terraform finishes applying the configuration, verifying the solution requi
 We can check if the data stream was created by looking for it's ARN:
 
 ```bash
-terraform state show aws_kinesis_stream.devops_stream | grep "arn"
+terraform state show aws_sns_topic.devops_notifications | grep "arn"
 ```
 
 Expected output:
 
 ```bash
-arn = "arn:aws:kinesis:us-east-1:000000000000:stream/devops-stream"
-id = "arn:aws:kinesis:us-east-1:000000000000:stream/devops-stream"
+arn = "arn:aws:sns:us-east-1:000000000000:devops-notifications"
+id  = "arn:aws:sns:us-east-1:000000000000:devops-notifications"
 ```
 
 ## Troubleshooting
