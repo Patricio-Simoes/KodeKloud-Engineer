@@ -35,7 +35,7 @@ SNS Topics act as a **communication channel** that allows us to send messages 
 
 Terraform provides the following resources for this task:
 
-- `aws_sns_topic` to create the SNS topic;
+- `aws_sns_topic` to create the SNS topic.
 
 **Complete Configuration:**
 

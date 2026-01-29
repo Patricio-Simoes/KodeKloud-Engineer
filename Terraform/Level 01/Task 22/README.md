@@ -37,7 +37,7 @@ It lets us define, provision, and manage AWS resources using text files (templat
 
 Terraform provides the following resources for this task:
 
-- `aws_cloudformation_stack` to create the CloudFormation stack in AWS;
+- `aws_cloudformation_stack` to create the CloudFormation stack in AWS.
 
 **Complete Configuration:**
 

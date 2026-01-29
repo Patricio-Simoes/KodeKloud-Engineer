@@ -39,7 +39,7 @@ DynamoDB is ideal for applications that require low-latency data access, such as
 
 Terraform provides the following resources for this task:
 
-- `aws_iam_user` to create the AWS IAM user;
+- `aws_iam_user` to create the AWS IAM user.
 
 **Complete Configuration:**
 

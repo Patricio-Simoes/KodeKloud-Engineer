@@ -35,7 +35,7 @@ It allows us to manage users, groups, roles, and their permissions to ensure tha
 
 Terraform provides the following resources for this task:
 
-- `aws_iam_user` to create the AWS IAM user;
+- `aws_iam_user` to create the AWS IAM user.
 
 **Complete Configuration:**
 

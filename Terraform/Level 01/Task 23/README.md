@@ -35,7 +35,7 @@ It helps us store large amounts of data and then search, filter, and analyze it 
 
 Terraform provides the following resources for this task:
 
-- `aws_opensearch_domain` to create the OpenSearch domain in AWS;
+- `aws_opensearch_domain` to create the OpenSearch domain in AWS.
 
 **Complete Configuration:**
 

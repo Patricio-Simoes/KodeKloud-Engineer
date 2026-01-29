@@ -35,7 +35,7 @@ It enables us to **collect, process, and analyze streaming data** from hundred
 
 Terraform provides the following resources for this task:
 
-- `aws_kinesis_stream` to create the data stream;
+- `aws_kinesis_stream` to create the data stream.
 
 **Complete Configuration:**
 

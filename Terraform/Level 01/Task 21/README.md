@@ -37,7 +37,7 @@ A log stream is a sequence of log events (individual log entries) within a log
 Terraform provides the following resources for this task:
 
 - `aws_cloudwatch_log_group` to create the log group in AWS;
-- `aws_cloudwatch_log_stream` to create the log stream in AWS;
+- `aws_cloudwatch_log_stream` to create the log stream in AWS.
 
 **Complete Configuration:**
 

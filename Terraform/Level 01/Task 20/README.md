@@ -37,7 +37,7 @@ SSM Parameters are essentially **key-value pairs** that we can reference in ou
 
 Terraform provides the following resources for this task:
 
-- `aws_ssm_parameter` to create the SSM Parameter;
+- `aws_ssm_parameter` to create the SSM Parameter.
 
 **Complete Configuration:**
 
