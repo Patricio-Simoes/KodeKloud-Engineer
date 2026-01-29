@@ -10,7 +10,7 @@ topics:
 
 Task number 21 was focused on AWS CloudWatch.
 
-The objective was to **create a CloudWatch log group and log stream using Terraform**
+The objective was to **create a CloudWatch log group and log stream using Terraform**.
 
 **Requirements:**
 
@@ -21,7 +21,7 @@ The objective was to **create a CloudWatch log group and log stream using Terraf
 
 When approaching this challenge, I broke it down into a sequence of steps:
 
-1. Understand what CloudWatch log groups & log streams  are and why they are used;
+1. Understand what CloudWatch log groups & log streams are and why they are used;
 2. Write the Terraform configuration to create the resources;
 3. Initialize and apply the Terraform workflow to create the infrastructure;
 4. Verify that the resources were created successfully on AWS.
