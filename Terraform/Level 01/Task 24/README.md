@@ -128,7 +128,7 @@ terraform state show aws_secretsmanager_secret_version.devops_secret_value | gre
 Expected output:
 
 ```bash
-secret_string    = (sensitive value)
+secret_string = (sensitive value)
 ```
 
 ## Troubleshooting

@@ -47,8 +47,8 @@ An **AWS key pair** is a set of cryptographic credentials used for authenticatio
 
 Terraform provides the following resources for this task:
 
-- `aws_instance` to create an EC2 in AWS.
-- `tls_private_key` to create a private key using Terraform.
+- `aws_instance` to create an EC2 in AWS.;
+- `tls_private_key` to create a private key using Terraform.;
 - `aws_key_pair` to create a public key that pairs with the private key created.
 
 There is also a new `data` block introduced in this task. This block is used to **retrieve** data from existing resources. **It does not modify** them in any way.
