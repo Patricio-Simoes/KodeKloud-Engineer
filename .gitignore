@@ -246,3 +246,5 @@ terraform.rc
 .vscode
 
 Templates/
+
+.idea/
