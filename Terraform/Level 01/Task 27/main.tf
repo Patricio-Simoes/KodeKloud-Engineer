@@ -1,26 +1,30 @@
-# Provision EC2 instance
-resource "aws_instance" "ec2" {
-  ami           = "ami-0c101f26f147fa7fd"
-  instance_type = "t2.micro"
-  subnet_id     = "subnet-f57221523116f6408"
-  vpc_security_group_ids = [
-    "sg-916806551205c871a"
-  ]
+# Create IAM user
+resource "aws_iam_user" "user" {
+  name = "iamuser_ammar"
 
   tags = {
-    Name = "nautilus-ec2"
+    Name = "iamuser_ammar"
   }
 }
 
-# Provision Elastic IP
-resource "aws_eip" "ec2_eip" {
-  tags = {
-    Name = "nautilus-ec2-eip"
-  }
+# Create IAM Policy
+resource "aws_iam_policy" "policy" {
+  name        = "iampolicy_ammar"
+  description = "IAM policy allowing EC2 read actions for ammar"
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect   = "Allow"
+        Action   = ["ec2:Read*"]
+        Resource = "*"
+      }
+    ]
+  })
 }
 
-# Attach Elastic IP to EC2
-resource "aws_eip_association" "eip_assoc" {
-  instance_id   = aws_instance.ec2.id
-  allocation_id = aws_eip.ec2_eip.id
+resource "aws_iam_user_policy_attachment" "ammar" {
+  user       = aws_iam_user.user.name
+  policy_arn = aws_iam_policy.policy.arn
 }

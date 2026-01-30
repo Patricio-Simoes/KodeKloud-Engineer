@@ -21,7 +21,7 @@ The objective was to **attach an existing IAM policy to an existing IAM user usi
 
 When approaching this challenge, I broke it down into a sequence of steps:
 
-1. Recap what AWS is and why it is used;
+1. Recap what AWS IAM is and why it is used;
 2. Write the Terraform configuration to create the resources;
 3. Initialize and apply the Terraform workflow to create the infrastructure;
 4. Verify that the resources were created successfully on AWS.
