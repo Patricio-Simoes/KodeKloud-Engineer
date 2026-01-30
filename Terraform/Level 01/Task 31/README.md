@@ -4,51 +4,44 @@ tags:
   - KodeKloud
   - Terraform
 topics:
-  - AWS EC2
+  - AWS IAM
 ---
 # README
 
-Task number 30 was focused on AWS EC2 instances.
+Task number 31 was focused on AWS IAM Groups.
 
-The objective was to **delete an EC2 instance using Terraform**.
+The objective was to **delete an IAM Group using Terraform**.
 
 **Requirements:**
 
-- Delete the ec2 instance named `xfusion-ec2`.
+- Delete an IAM group named `iamgroup_rose`.
 
 ## Step-by-Step Solution
 
 When approaching this challenge, I broke it down into a sequence of steps:
 
-1. Recap what AWS EC2 is and why it is used;
+1. Recap what AWS IAM is and why it is used;
 2. Write the Terraform configuration to create the resources;
 3. Initialize and apply the Terraform workflow to create the infrastructure;
 4. Verify that the resources were created successfully on AWS.
 
-### 1. What Exactly is an AWS EC2 instance? (A recap from previous tasks)
+### 1. What Exactly is AWS IAM? (A recap from previous tasks)
 
-An EC2 instance (short for Elastic Compute Cloud instance) in AWS (Amazon Web Services) is essentially a virtual server that runs in Amazon’s cloud.
+**AWS IAM (Identity and Access Management)** is a web service that helps securely control access to AWS resources.
+
+It allows us to manage users, groups, roles, and their permissions to ensure that only authorized individuals or systems can access specific AWS resources.
 
 ### 2. The Terraform Solution
 
 Terraform provides the following resources for this task:
 
-- `aws_instance` to create an EC2 instance in AWS.
+- `aws_iam_group` to create an IAM Group in AWS.
 
 **Complete Configuration:**
 
 ```hcl
-# Provision EC2 instance
-resource "aws_instance" "ec2" {
-  ami           = "ami-0c101f26f147fa7fd"
-  instance_type = "t2.micro"
-  vpc_security_group_ids = [
-    "sg-1df24021c7135b633"
-  ]
-
-  tags = {
-    Name = "xfusion-ec2"
-  }
+resource "aws_iam_group" "this" {
+  name = "iamgroup_rose"
 }
 ```
 
@@ -66,22 +59,20 @@ terraform destroy -auto-approve
 
 Once Terraform finishes applying the configuration, verifying the solution requires: 
 
-### 1. Check if the EC2 instance was terminated
+### 1. Check if the IAM Group was eliminated
 
-We can check if the EC2 instance was deleted by using the AWS CLI tool:
+We can check if the IAM Group was deleted by using the AWS CLI tool:
 
 ```bash
-aws ec2 describe-instances | grep -A 3 "State"
+aws iam get-group --group-name iamgroup_rose
 ```
 
 Expected output:
 
 ```bash
-"State": {
-  "Code": 48,
-  "Name": "terminated"
-},
+An error occurred (NoSuchEntity) when calling the GetGroup operation: Group iamgroup_rose not found
 ```
+
 ## Troubleshooting
 
 Surprisingly, no issues occurred during this task!
