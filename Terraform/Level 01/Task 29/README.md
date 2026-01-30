@@ -14,8 +14,8 @@ The objective was to **copy the contents of an S3 bucket to a local directory an
 
 **Requirements:**
 
-- Copy the contents of `nautilus-bck-23730` S3 bucket to `/opt/s3-backup/` directory;
-- Delete the S3 bucket `nautilus-bck-23730`.
+- Copy the contents of `xfusion-bck-28485` S3 bucket to `/opt/s3-backup/` directory;
+- Delete the S3 bucket `xfusion-bck-28485`.
 
 ## Step-by-Step Solution
 
