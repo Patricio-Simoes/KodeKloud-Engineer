@@ -93,7 +93,7 @@ Once Terraform finishes applying the configuration, verifying the solution requi
 
 ### 1. Check if the EC2 has the `t2.nano`instance type
 
-We can check if the instance was changed by looking st the state file:
+We can check if the instance was changed by looking at the state file:
 
 ```bash
 terraform state show aws_instance.ec2 | grep instance_type
