@@ -8,13 +8,13 @@ topics:
 ---
 # README
 
-Task number 38 was focused on AWS IAM Users.
+Task number 39 was focused on AWS IAM Roles.
 
-The objective was to **create an IAM User using Terraform**.
+The objective was to **create an IAM Role using Terraform**.
 
 **Requirements:**
 
-- The IAM User name `iamuser_mark` should be stored in a variable named `KKE_user`.
+- The IAM role name `iamrole_ravi` should be stored in a variable named `KKE_iamrole`.
 
 ## Step-by-Step Solution
 
@@ -35,20 +35,32 @@ It allows us to manage users, groups, roles, and their permissions to ensure tha
 
 Terraform provides the following resources for this task:
 
-- `aws_iam_user` to create an IAM User in AWS.
+- `aws_iam_role` to create an IAM Role in AWS.
 - `variable` block, to specify Terraform variables.
 
 **Complete Configuration:**
 
 ```hcl
-resource "aws_iam_user" "this" {
-  name = var.KKE_user
+resource "aws_iam_role" "this" {
+  name = var.KKE_iamrole
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Effect    = "Allow"
+        Principal = {
+          Service = "ec2.amazonaws.com"
+        }
+        Action = "sts:AssumeRole"
+      }
+    ]
+  })
 }
 
-variable "KKE_user" {
+variable "KKE_iamrole" {
   type        = string
-  description = "Name of the IAM User"
-  default     = "iamuser_mark"
+  description = "Name of the IAM Role"
+  default     = "iamrole_ravi"
 }
 ```
 
@@ -66,26 +78,18 @@ terraform destroy -auto-approve
 
 Once Terraform finishes applying the configuration, verifying the solution requires: 
 
-### 1. Check if the IAM User was created
+### 1. Check if the IAM Role was created
 
-We can check if the IAM User was created by using the AWS CLI tool:
+We can check if the IAM Role was created by using the AWS CLI tool:
 
 ```bash
-aws iam get-user --user-name iamuser_mark
+aws iam get-role --role-name iamrole_ravi | grep "Arn"
 ```
 
 Expected output:
 
 ```bash
-{
-    "User": {
-        "Path": "/",
-        "UserName": "iamuser_mark",
-        "UserId": "z5ksrcdjrn47kqgt3lwy",
-        "Arn": "arn:aws:iam::000000000000:user/iamuser_mark",
-        "CreateDate": "2026-01-31T18:14:33.357639Z"
-    }
-}
+"Arn": "arn:aws:iam::000000000000:role/iamrole_ravi",
 ```
 
 ## Troubleshooting
