@@ -76,9 +76,9 @@ terraform destroy -auto-approve
 
 Once Terraform finishes applying the configuration, verifying the solution requires: 
 
-### 1. Check if the IAM Group was eliminated
+### 1. Check if the IAM Role was eliminated
 
-We can check if the IAM Group was deleted by using the AWS CLI tool:
+We can check if the IAM Role was deleted by using the AWS CLI tool:
 
 ```bash
 aws iam get-role --role-name iamgrole_jim
