@@ -3,7 +3,7 @@ resource "aws_s3_bucket" "s3_ran_bucket" {
   acl    = "private"
 
   tags = {
-    Name        = "nautilus-s3-5188"
+    Name = "nautilus-s3-5188"
   }
 }
 

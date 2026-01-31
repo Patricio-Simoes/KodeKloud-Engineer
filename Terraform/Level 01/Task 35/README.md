@@ -4,33 +4,33 @@ tags:
   - KodeKloud
   - Terraform
 topics:
-  - AWS S3
+  - AWS VPCs
 ---
 # README
 
-Task number 34 was focused on AWS S3.
+Task number 35 was focused on AWS VPCs.
 
-The objective was to **copy data to an S3 Bucket using Terraform**.
+The objective was to **create a VPC using Terraform**.
 
 **Requirements:**
 
-- S3 bucket named `devops-cp-2454` already exists;
-- Copy the file `/tmp/devops.txt` to s3 bucket `devops-cp-2454`.
+- The VPC name `nautilus-vpc` should be stored in a variable named `KKE_vpc`;
+- The VPC should have a CIDR block of `10.0.0.0/16`.
 
 ## Step-by-Step Solution
 
 When approaching this challenge, I broke it down into a sequence of steps:
 
-1. Recap what an S3 Bucket is and why it is used;
+1. Recap what a VPC is and why it is used;
 2. Write the Terraform configuration to create the resources;
 3. Initialize and apply the Terraform workflow to create the infrastructure;
 4. Verify that the resources were created successfully on AWS.
 
-### 1. What Exactly is an AWS S3 Bucket? (A recap from previous tasks)
+### 1. What Exactly is an AWS VPC? (A recap from previous tasks)
 
-An AWS S3 (Simple Storage Service) bucket is a scalable, cloud-based storage container for objects (files) such as images, videos, documents, and backups.
+An AWS VPC (Virtual Private Cloud) is a **virtual network** dedicated to an AWS account.
 
-Each bucket has a globally unique name and can store an unlimited number of objects.
+It enables you to launch AWS resources in a logically isolated environment, giving you complete control over your network settings. This includes defining your IP address range, creating subnets, and configuring route tables and network gateways.
 
 ### 2. The Terraform Solution
 
@@ -41,19 +41,18 @@ Terraform provides the following resources for this task:
 **Complete Configuration:**
 
 ```hcl
-resource "aws_s3_bucket" "my_bucket" {
-  bucket = "devops-cp-2454"
-  acl    = "private"
+resource "aws_vpc" "this" {
+  cidr_block = "10.0.0.0/16"
 
   tags = {
-    Name = "devops-cp-2454"
+    Name = var.KKE_vpc
   }
 }
 
-resource "null_resource" "aws_cli" {
-  provisioner "local-exec" {
-    command = "aws s3 cp /tmp/devops.txt s3://devops-cp-2454"
-  }
+variable "KKE_vpc" {
+  type        = string
+  description = "Name of the VPC"
+  default     = "nautilus-vpc"
 }
 ```
 
@@ -91,18 +90,18 @@ terraform apply -auto-approve
 
 Once Terraform finishes applying the configuration, verifying the solution requires: 
 
-### 1. Check if the `devops.txt`file is present in the S3
+### 1. Check if the VPC was created
 
-We can check if the file is present by using the AWS CLI tool:
+We can check if the VPC was created with the AWS CLI tool:
 
 ```bash
-aws s3 ls s3://devops-cp-2454
+aws ec2 describe-vpcs --filters "Name=tag:Name,Values=nautilus-vpc" | grep "VpcId"
 ```
 
 Expected output:
 
 ```bash
-2026-01-31 16:49:31         27 devops.txt
+"VpcId": "vpc-d5871ac1df09e7cb0",
 ```
 
 ## Troubleshooting

@@ -2,7 +2,7 @@ resource "aws_s3_bucket" "nautilus" {
   bucket = "nautilus-s3-17198"
 
   tags = {
-    Name        = "nautilus-s3-17198"
+    Name = "nautilus-s3-17198"
   }
 }
 
