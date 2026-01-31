@@ -4,51 +4,53 @@ tags:
   - KodeKloud
   - Terraform
 topics:
-  - AWS Security Groups
+  - AWS Elastic IPs
 ---
 # README
 
-Task number 36 was focused on AWS Security Groups.
+Task number 37 was focused on AWS Elastic IPs.
 
-The objective was to **create a Security Group using Terraform**.
+The objective was to **create an Elastic IPs using Terraform**.
 
 **Requirements:**
 
-- The Security Group name `devops-sg` should be stored in a variable named `KKE_sg`.
+- The Elastic IP name `datacenter-eip` should be stored in a variable named `KKE_eip`.
 
 ## Step-by-Step Solution
 
 When approaching this challenge, I broke it down into a sequence of steps:
 
-1. Recap what a Security Group is and why it is used;
+1. Recap what an Elastic IP is and why it is used;
 2. Write the Terraform configuration to create the resources;
 3. Initialize and apply the Terraform workflow to create the infrastructure;
 4. Verify that the resources were created successfully on AWS.
 
-### 1. What Exactly is an AWS Security Group? (A recap from previous tasks)
+### 1. What Exactly is an AWS Elastic IP? (A recap from previous tasks)
 
-An AWS Security Group is a **virtual firewall that controls inbound and outbound traffic** to AWS resources.
+An AWS Elastic IP (EIP) is a **static, public IPv4 address** designed for dynamic cloud computing in AWS.
 
-It enables you to secure your cloud environment by defining rules that specify what traffic is allowed or denied.
+Unlike regular public IPs that are assigned to an instance temporarily and can change when the instance stops or restarts, **an Elastic IP remains yours until you explicitly release it**.
 
 ### 2. The Terraform Solution
 
 Terraform provides the following resources for this task:
 
-- `aws_security_group` to create a Security Group in AWS.
+- `aws_eip` to create a Elastic IP in AWS.
 - `variable` block, to specify Terraform variables.
 
 **Complete Configuration:**
 
 ```hcl
-resource "aws_security_group" "this" {
-  name = var.KKE_sg
+resource "aws_eip" "this" {
+  tags = {
+    Name = var.KKE_eip
+  }
 }
 
-variable "KKE_sg" {
+variable "KKE_eip" {
   type        = string
-  description = "Name of the Security Group"
-  default     = "devops-sg"
+  description = "Name of the Elastic IP"
+  default     = "datacenter-eip"
 }
 ```
 
@@ -86,18 +88,34 @@ terraform apply -auto-approve
 
 Once Terraform finishes applying the configuration, verifying the solution requires:
 
-### 1. Check if the Security Group was created
+### 1. Check if the Elastic IP was created
 
-We can check if the Security Group was created with the AWS CLI tool:
+We can check if the Elastic IP was created with the AWS CLI tool:
 
 ```bash
-aws ec2 describe-security-groups --filters "Name=group-name,Values=devops-sg" | grep "SecurityGroupArn"
+aws ec2 describe-addresses
 ```
 
 Expected output:
 
 ```bash
-"SecurityGroupArn": "arn:aws:ec2:us-east-1:000000000000:security-group/sg-aff9b14894b3ea004",
+{
+    "Addresses": [
+        {
+            "AllocationId": "eipalloc-8ae77cb6ea7b4e331",
+            "Domain": "vpc",
+            "NetworkInterfaceId": "",
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "datacenter-eip"
+                }
+            ],
+            "InstanceId": "",
+            "PublicIp": "127.142.125.239"
+        }
+    ]
+}
 ```
 
 ## Troubleshooting
