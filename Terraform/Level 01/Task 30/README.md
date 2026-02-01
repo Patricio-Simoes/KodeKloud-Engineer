@@ -6,7 +6,7 @@ tags:
 topics:
   - AWS EC2
 ---
-# README
+# Task 30 - Delete EC2 Instance Using Terraform
 
 Task number 30 was focused on AWS EC2 instances.
 

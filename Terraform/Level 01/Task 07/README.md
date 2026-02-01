@@ -6,7 +6,7 @@ tags:
 topics:
   - AWS EC2
 ---
-# README
+# Task 07 - Create EC2 Instance Using Terraform
 
 Task number 7 was focused on AWS EC2 instances.
 

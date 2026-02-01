@@ -6,7 +6,7 @@ tags:
 topics:
   - IAM
 ---
-# README
+# Task 16 - Create IAM Policy Using Terraform
 
 Task number 16 was focused on creating IAM policies on AWS.
 

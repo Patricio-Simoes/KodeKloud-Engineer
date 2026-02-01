@@ -6,7 +6,7 @@ tags:
 topics:
   - AWS EC2
 ---
-# README
+# Task 25 - Change Instance Type Using Terraform
 
 Task number 25 was focused on EC2 instance types.
 

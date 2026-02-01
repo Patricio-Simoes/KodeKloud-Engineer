@@ -6,7 +6,7 @@ tags:
 topics:
   - AWS Secrets Manager
 ---
-# README
+# Task 24 - Secrets Manager Setup Using Terraform
 
 Task number 24 was focused on AWS Secrets Manager.
 

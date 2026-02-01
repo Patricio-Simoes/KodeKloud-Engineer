@@ -6,7 +6,7 @@ tags:
 topics:
   - AWS VPCs
 ---
-# README
+# Task 33 - Delete VPC Using Terraform
 
 Task number 33 was focused on AWS VPCs.
 

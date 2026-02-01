@@ -6,7 +6,7 @@ tags:
 topics:
   - AWS Elastic IPs
 ---
-# README
+# Task 06 - Create Elastic IP Using Terraform
 
 Task number 6 was focused on AWS Elastic IPs.
 

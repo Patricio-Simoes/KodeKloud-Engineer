@@ -6,7 +6,7 @@ tags:
 topics:
   - OpenSearch
 ---
-# README
+# Task 23 - OpenSearch Setup Using Terraform
 
 Task number 23 was focused on OpenSearch.
 

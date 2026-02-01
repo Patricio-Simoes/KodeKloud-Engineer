@@ -6,7 +6,7 @@ tags:
 topics:
   - AWS Security Groups
 ---
-# README
+# Task 36 - Security Group Variable Setup Using Terraform
 
 Task number 36 was focused on AWS Security Groups.
 

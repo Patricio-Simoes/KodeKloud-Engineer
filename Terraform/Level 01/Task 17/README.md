@@ -6,7 +6,7 @@ tags:
 topics:
   - DynamoDB
 ---
-# README
+# Task 17 - Create DynamoDB Table Using Terraform
 
 Task number 17 was focused on creating DynamoDB tables in AWS.
 

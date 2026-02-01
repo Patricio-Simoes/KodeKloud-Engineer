@@ -6,7 +6,7 @@ tags:
 topics:
   - Kinesis
 ---
-# README
+# Task 18 - Create Kinesis Stream Using Terraform
 
 Task number 18 was focused on Kinesis data streams.
 

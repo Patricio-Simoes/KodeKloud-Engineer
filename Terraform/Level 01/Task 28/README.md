@@ -6,7 +6,7 @@ tags:
 topics:
   - AWS S3
 ---
-# README
+# Task 28 - Enable S3 Versioning Using Terraform
 
 Task number 28 was focused on AWS S3 Bucket versioning.
 

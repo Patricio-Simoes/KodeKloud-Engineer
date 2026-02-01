@@ -6,7 +6,7 @@ tags:
 topics:
   - AWS AMIs
 ---
-# README
+# Task 08 - Create AMI Using Terraform
 
 Task number 8 was focused on creating AWS AMIs.
 

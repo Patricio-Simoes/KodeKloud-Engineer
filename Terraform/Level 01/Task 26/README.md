@@ -7,7 +7,7 @@ topics:
   - AWS EC2
   - AWS Elastic IPs
 ---
-# README
+# Task 26 - Attach Elastic IP Using Terraform
 
 Task number 26 was focused on AWS Elastic IPs.
 

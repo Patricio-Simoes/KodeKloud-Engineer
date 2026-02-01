@@ -6,7 +6,7 @@ tags:
 topics:
   - SSM Parameters
 ---
-# README
+# Task 20 - Create SSM Parameter Using Terraform
 
 Task number 20 was focused on SSM Parameters in AWS.
 

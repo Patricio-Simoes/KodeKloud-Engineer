@@ -6,7 +6,7 @@ tags:
 topics:
   - AWS Elastic IPs
 ---
-# README
+# Task 37 - Elastic IP Variable Setup Using Terraform
 
 Task number 37 was focused on AWS Elastic IPs.
 

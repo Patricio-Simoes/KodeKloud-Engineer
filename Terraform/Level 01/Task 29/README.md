@@ -6,7 +6,7 @@ tags:
 topics:
   - AWS S3
 ---
-# README
+# Task 29 - Delete Backup from S3 Using Terraform
 
 Task number 29 was focused on AWS S3 Bucket backups.
 

@@ -6,7 +6,7 @@ tags:
 topics:
   - AWS S3
 ---
-# README
+# Task 12 - Create Public S3 Bucket Using Terraform
 
 Task number 12 was focused on creating a public S3 bucket on AWS.
 

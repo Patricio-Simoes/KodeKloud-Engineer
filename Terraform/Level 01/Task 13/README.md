@@ -6,7 +6,7 @@ tags:
 topics:
   - AWS S3
 ---
-# README
+# Task 13 - Create Private S3 Bucket Using Terraform
 
 Task number 13 was focused on creating a private S3 bucket on AWS.
 

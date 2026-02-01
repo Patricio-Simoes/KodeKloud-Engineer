@@ -6,7 +6,7 @@ tags:
 topics:
   - CloudFormation
 ---
-# README
+# Task 22 - CloudFormation Template Deployment Using Terraform
 
 Task number 22 was focused on AWS CloudFormation.
 
